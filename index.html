@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KTS Wealth - Building Financial Freedom for Every Family</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --deep-navy: #0a1628;
+            --navy: #0f1f3d;
+            --royal-blue: #1a3a6b;
+            --gold: #c8963e;
+            --gold-light: #d4a853;
+            --gold-bright: #e8b95b;
+            --cream: #f8f5f0;
+            --white: #ffffff;
+            --light-gray: #f4f4f5;
+            --text-dark: #1a1a2e;
+            --text-muted: #5a5f6b;
+            --soft-border: #e8e5df;
+            --success-green: #2d8a56;
+            --shadow-sm: 0 2px 8px rgba(10, 22, 40, 0.06);
+            --shadow-md: 0 4px 20px rgba(10, 22, 40, 0.10);
+            --shadow-lg: 0 8px 40px rgba(10, 22, 40, 0.14);
+            --shadow-xl: 0 16px 60px rgba(10, 22, 40, 0.18);
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+            --bounce: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--white);
+            color: var(--text-dark);
+            line-height: 1.65;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ========== NAVBAR ========== */
+        .navbar {
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            padding: 10px 0;
+            transition: all var(--transition);
+            z-index: 1050;
+            border-bottom: 1px solid transparent;
+        }
+        .navbar.scrolled {
+            box-shadow: var(--shadow-md);
+            border-bottom: 1px solid var(--soft-border);
+            padding: 6px 0;
+        }
+        .navbar-brand {
+            font-family: 'Playfair Display', 'Inter', serif;
+            font-weight: 800;
+            font-size: 1.65rem;
+            letter-spacing: -0.3px;
+            color: var(--deep-navy) !important;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .navbar-brand .brand-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-bright) 100%);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--deep-navy);
+            font-weight: 900;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            box-shadow: 0 3px 12px rgba(200, 150, 62, 0.3);
+        }
+        .navbar-brand .brand-text {
+            line-height: 1.15;
+        }
+        .navbar-brand .brand-text .brand-name {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        .navbar-brand .brand-text .brand-sub {
+            font-size: 0.58rem;
+            font-weight: 600;
+            letter-spacing: 3.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+            display: block;
+            margin-top: -2px;
+        }
+        .navbar .nav-link {
+            font-weight: 500;
+            font-size: 0.92rem;
+            color: var(--text-dark) !important;
+            padding: 0.5rem 1rem !important;
+            margin: 0 3px;
+            border-radius: 6px;
+            transition: all var(--transition);
+            position: relative;
+            letter-spacing: 0.2px;
+        }
+        .navbar .nav-link:hover,
+        .navbar .nav-link.active {
+            color: var(--gold) !important;
+            background: rgba(200, 150, 62, 0.06);
+        }
+        .navbar .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 3px;
+        }
+        .navbar-phone {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--deep-navy) !important;
+            background: var(--cream);
+            padding: 0.5rem 1.1rem !important;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            white-space: nowrap;
+        }
+        .navbar-phone:hover {
+            background: #efe9db;
+            color: var(--gold) !important;
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-sm);
+        }
+        .navbar-phone i {
+            color: var(--success-green);
+            font-size: 1rem;
+        }
+        .navbar-toggler {
+            border: none;
+            padding: 8px 10px;
+            border-radius: var(--radius-sm);
+            background: var(--cream);
+            transition: var(--transition);
+        }
+        .navbar-toggler:focus {
+            box-shadow: 0 0 0 3px rgba(200, 150, 62, 0.25);
+            outline: none;
+        }
+        .navbar-toggler .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(10, 22, 40, 0.75)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.5' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* ========== HERO SECTION ========== */
+        .hero-section {
+            position: relative;
+            background: linear-gradient(160deg, #fafaf8 0%, #f3efe7 30%, #eae3d5 70%, #f7f3eb 100%);
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding: 100px 0 80px;
+        }
+        .hero-bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.045;
+            background-image:
+                radial-gradient(circle at 20% 30%, #1a3a6b 1px, transparent 1px),
+                radial-gradient(circle at 75% 55%, #1a3a6b 1.5px, transparent 1.5px),
+                radial-gradient(circle at 40% 80%, #c8963e 1px, transparent 1px);
+            background-size: 50px 50px, 70px 70px, 60px 60px;
+            background-position: 0 0, 20px 15px, 10px 30px;
+        }
+        .hero-accent-circle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.07;
+        }
+        .hero-accent-circle.circle-1 {
+            width: 500px;
+            height: 500px;
+            background: var(--royal-blue);
+            top: -180px;
+            right: -120px;
+        }
+        .hero-accent-circle.circle-2 {
+            width: 300px;
+            height: 300px;
+            background: var(--gold);
+            bottom: -60px;
+            left: -80px;
+            opacity: 0.09;
+        }
+        .hero-accent-circle.circle-3 {
+            width: 180px;
+            height: 180px;
+            background: var(--gold-light);
+            top: 30%;
+            left: 55%;
+            opacity: 0.06;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--white);
+            border: 1px solid var(--soft-border);
+            border-radius: 50px;
+            padding: 8px 18px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--royal-blue);
+            letter-spacing: 0.3px;
+            margin-bottom: 22px;
+            box-shadow: var(--shadow-sm);
+            animation: fadeInUp 0.7s ease-out;
+        }
+        .hero-badge .badge-dot {
+            width: 10px;
+            height: 10px;
+            background: var(--success-green);
+            border-radius: 50%;
+            animation: pulse-dot 2s infinite;
+        }
+        @keyframes pulse-dot {
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(45, 138, 86, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 0 10px rgba(45, 138, 86, 0);
+            }
+        }
+        .hero-title {
+            font-family: 'Playfair Display', 'Inter', serif;
+            font-weight: 800;
+            font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+            line-height: 1.18;
+            color: var(--deep-navy);
+            margin-bottom: 20px;
+            letter-spacing: -0.6px;
+            animation: fadeInUp 0.7s ease-out 0.1s both;
+        }
+        .hero-title .highlight {
+            position: relative;
+            display: inline-block;
+            color: var(--gold);
+        }
+        .hero-title .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: rgba(200, 150, 62, 0.2);
+            border-radius: 4px;
+            z-index: -1;
+        }
+        .hero-subtitle {
+            font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+            color: var(--text-muted);
+            font-weight: 400;
+            line-height: 1.6;
+            margin-bottom: 32px;
+            max-width: 540px;
+            animation: fadeInUp 0.7s ease-out 0.2s both;
+        }
+        .hero-subtitle strong {
+            color: var(--deep-navy);
+            font-weight: 700;
+        }
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            animation: fadeInUp 0.7s ease-out 0.3s both;
+        }
+        .btn-hero-primary {
+            background: linear-gradient(135deg, var(--gold) 0%, #d4a040 100%);
+            color: var(--deep-navy);
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 14px 30px;
+            border-radius: 50px;
+            border: none;
+            letter-spacing: 0.3px;
+            transition: all var(--bounce);
+            box-shadow: 0 6px 22px rgba(200, 150, 62, 0.35);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .btn-hero-primary:hover {
+            background: linear-gradient(135deg, #d4a040 0%, #c8963e 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(200, 150, 62, 0.45);
+            color: var(--deep-navy);
+        }
+        .btn-hero-primary i {
+            font-size: 1.2rem;
+            transition: transform var(--bounce);
+        }
+        .btn-hero-primary:hover i {
+            transform: translateX(4px);
+        }
+        .btn-hero-outline {
+            background: transparent;
+            color: var(--deep-navy);
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 14px 28px;
+            border-radius: 50px;
+            border: 2px solid var(--soft-border);
+            letter-spacing: 0.3px;
+            transition: all var(--bounce);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+        .btn-hero-outline:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            background: rgba(200, 150, 62, 0.03);
+            transform: translateY(-3px);
+        }
+        .hero-visual {
+            position: relative;
+            z-index: 2;
+            animation: fadeInRight 0.8s ease-out 0.2s both;
+        }
+        .hero-card-stack {
+            position: relative;
+            width: 100%;
+            max-width: 440px;
+            margin: 0 auto;
+        }
+        .hero-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 28px 24px;
+            box-shadow: var(--shadow-xl);
+            position: relative;
+            z-index: 3;
+            border: 1px solid var(--soft-border);
+        }
+        .hero-card-behind {
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            right: -18px;
+            bottom: -18px;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            z-index: 1;
+            opacity: 0.55;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--soft-border);
+        }
+        .hero-card-behind.behind-2 {
+            top: 34px;
+            left: 34px;
+            right: -34px;
+            bottom: -34px;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        .hero-card .card-stat-row {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+        .hero-card .stat-box {
+            flex: 1;
+            background: var(--cream);
+            border-radius: var(--radius-md);
+            padding: 16px 14px;
+            text-align: center;
+            transition: var(--transition);
+        }
+        .hero-card .stat-box:hover {
+            background: #efe9db;
+            transform: translateY(-2px);
+        }
+        .hero-card .stat-box .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            font-size: 1.6rem;
+            color: var(--deep-navy);
+            line-height: 1;
+        }
+        .hero-card .stat-box .stat-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+        .hero-card .card-testimonial {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            font-style: italic;
+            line-height: 1.5;
+            padding: 12px 0;
+            border-top: 1px solid var(--soft-border);
+            margin-top: 8px;
+        }
+        .hero-card .card-testimonial .testimonial-author {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 0.8rem;
+            color: var(--gold);
+            margin-top: 6px;
+        }
+        .hero-trust-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 28px;
+            animation: fadeInUp 0.7s ease-out 0.4s both;
+        }
+        .hero-trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+        .hero-trust-item i {
+            color: var(--success-green);
+            font-size: 1.25rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* ========== SECTION STYLES ========== */
+        .section-pill {
+            display: inline-block;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            color: var(--deep-navy);
+            letter-spacing: -0.4px;
+            margin-bottom: 14px;
+        }
+        .section-desc {
+            color: var(--text-muted);
+            font-size: 1.02rem;
+            max-width: 620px;
+            line-height: 1.65;
+        }
+
+        /* ========== SERVICES SECTION ========== */
+        .services-section {
+            background: var(--white);
+            padding: 80px 0;
+        }
+        .service-card {
+            background: var(--white);
+            border: 1px solid var(--soft-border);
+            border-radius: var(--radius-lg);
+            padding: 30px 24px;
+            transition: all var(--bounce);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: transparent;
+        }
+        .service-card .service-icon {
+            width: 54px;
+            height: 54px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 18px;
+            transition: var(--bounce);
+        }
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+        }
+        .service-card .icon-blue {
+            background: #eef3fb;
+            color: var(--royal-blue);
+        }
+        .service-card .icon-gold {
+            background: #fdf6ea;
+            color: var(--gold);
+        }
+        .service-card .icon-green {
+            background: #eaf7f0;
+            color: var(--success-green);
+        }
+        .service-card h5 {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--deep-navy);
+            margin-bottom: 8px;
+        }
+        .service-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.5;
+        }
+        .service-card .card-arrow {
+            position: absolute;
+            bottom: 20px;
+            right: 24px;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: var(--cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--bounce);
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+        .service-card:hover .card-arrow {
+            opacity: 1;
+            transform: translateX(0);
+            background: var(--gold);
+            color: var(--white);
+        }
+
+        /* ========== CTA BANNER ========== */
+        .cta-banner {
+            background: linear-gradient(135deg, var(--deep-navy) 0%, #0d1f3f 40%, var(--royal-blue) 100%);
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(200, 150, 62, 0.08);
+            pointer-events: none;
+        }
+        .cta-banner::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: rgba(200, 150, 62, 0.05);
+            pointer-events: none;
+        }
+        .cta-banner .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+        .cta-banner h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            color: var(--white);
+            letter-spacing: -0.3px;
+        }
+        .cta-banner p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 1rem;
+        }
+        .btn-cta-gold {
+            background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 100%);
+            color: var(--deep-navy);
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 14px 32px;
+            border-radius: 50px;
+            border: none;
+            letter-spacing: 0.3px;
+            transition: all var(--bounce);
+            box-shadow: 0 8px 28px rgba(200, 150, 62, 0.4);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+        .btn-cta-gold:hover {
+            background: linear-gradient(135deg, #f0c860 0%, #d4a040 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 36px rgba(200, 150, 62, 0.55);
+            color: var(--deep-navy);
+        }
+
+        /* ========== FOOTER ========== */
+        .footer-section {
+            background: var(--cream);
+            padding: 50px 0 30px;
+            border-top: 1px solid var(--soft-border);
+        }
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            font-size: 1.6rem;
+            color: var(--deep-navy);
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .footer-tagline {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+        .footer-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            display: block;
+            padding: 3px 0;
+            font-weight: 400;
+        }
+        .footer-link:hover {
+            color: var(--gold);
+            padding-left: 4px;
+        }
+        .footer-heading {
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--deep-navy);
+            margin-bottom: 14px;
+        }
+        .footer-bottom {
+            border-top: 1px solid var(--soft-border);
+            padding-top: 20px;
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        /* ========== MODAL ========== */
+        .modal-content {
+            border-radius: var(--radius-lg);
+            border: none;
+            box-shadow: var(--shadow-xl);
+        }
+        .modal-header {
+            border-bottom: 1px solid var(--soft-border);
+            padding: 20px 24px;
+        }
+        .modal-header .modal-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--deep-navy);
+        }
+        .modal-body {
+            padding: 24px;
+        }
+        .form-control {
+            border-radius: var(--radius-sm);
+            border: 1.5px solid var(--soft-border);
+            padding: 12px 16px;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            background: var(--white);
+        }
+        .form-control:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 4px rgba(200, 150, 62, 0.1);
+            outline: none;
+        }
+        .form-label {
+            font-weight: 600;
+            font-size: 0.88rem;
+            color: var(--deep-navy);
+            margin-bottom: 6px;
+        }
+        .btn-submit {
+            background: linear-gradient(135deg, var(--gold) 0%, #d4a040 100%);
+            color: var(--deep-navy);
+            font-weight: 700;
+            border: none;
+            padding: 13px 28px;
+            border-radius: 50px;
+            letter-spacing: 0.3px;
+            transition: all var(--bounce);
+            box-shadow: 0 6px 22px rgba(200, 150, 62, 0.35);
+            cursor: pointer;
+            width: 100%;
+        }
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(200, 150, 62, 0.5);
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 991.98px) {
+            .hero-section {
+                min-height: auto;
+                padding: 70px 0 50px;
+                text-align: center;
+            }
+            .hero-subtitle {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .hero-trust-strip {
+                justify-content: center;
+            }
+            .hero-visual {
+                margin-top: 40px;
+            }
+            .hero-card-stack {
+                max-width: 340px;
+            }
+            .hero-card-behind {
+                display: none;
+            }
+            .navbar .nav-link {
+                padding: 0.6rem 1rem !important;
+            }
+            .navbar-phone {
+                margin-top: 6px;
+            }
+            .navbar-collapse {
+                background: var(--white);
+                border-radius: var(--radius-md);
+                padding: 16px;
+                box-shadow: var(--shadow-lg);
+                margin-top: 8px;
+            }
+        }
+        @media (max-width: 575.98px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn-hero-primary,
+            .btn-hero-outline {
+                width: 100%;
+                justify-content: center;
+                text-align: center;
+            }
+            .hero-card-stack {
+                max-width: 280px;
+            }
+            .hero-card .card-stat-row {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .cta-banner {
+                text-align: center;
+            }
+            .cta-banner .d-flex {
+                flex-direction: column;
+                align-items: center;
+                gap: 16px;
+            }
+            .navbar-brand {
+                font-size: 1.3rem;
+            }
+            .navbar-brand .brand-icon {
+                width: 34px;
+                height: 34px;
+                font-size: 0.9rem;
+            }
+            .navbar-brand .brand-text .brand-name {
+                font-size: 1.25rem;
+            }
+        }
+        @media (min-width: 1400px) {
+            .container {
+                max-width: 1240px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand" href="#">
+                <div class="brand-icon">KTS</div>
+                <div class="brand-text">
+                    <span class="brand-name">KTS WEALTH</span>
+                    <span class="brand-sub">Financial Services</span>
+                </div>
+            </a>
+
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Nav Links -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
+                <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#investment">Investment</a></li>
+                <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+            </ul>
+            <!-- Phone -->
+            <a href="tel:0000041027" class="navbar-phone">
+                <i class="bi bi-telephone-fill"></i> 0000041027
+            </a>
+        </div>
+    </div>
+</nav>
+
+<!-- ==================== HERO SECTION ==================== -->
+<section class="hero-section" id="home">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-accent-circle circle-1"></div>
+    <div class="hero-accent-circle circle-2"></div>
+    <div class="hero-accent-circle circle-3"></div>
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <!-- Left Content -->
+            <div class="col-lg-7 hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span> Trusted by 10,000+ Families Across India
+                </div>
+                <h1 class="hero-title">
+                    Building <span class="highlight">Financial Freedom</span><br>for Every Family
+                </h1>
+                <p class="hero-subtitle">
+                    <strong>Helping Lower Middle Class &amp; Rural Communities</strong> achieve lasting financial security through trusted guidance, smart investments, and accessible education.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#consultation" class="btn-hero-primary" data-bs-toggle="modal" data-bs-target="#consultationModal">
+                        Book Free Consultation <i class="bi bi-arrow-right"></i>
+                    </a>
+                    <a href="#services" class="btn-hero-outline">
+                        <i class="bi bi-play-circle"></i> Explore Services
+                    </a>
+                </div>
+                <div class="hero-trust-strip">
+                    <div class="hero-trust-item"><i class="bi bi-shield-check"></i> SEBI Registered</div>
+                    <div class="hero-trust-item"><i class="bi bi-star-fill"></i> 15+ Years Experience</div>
+                    <div class="hero-trust-item"><i class="bi bi-people-fill"></i> Family-First Approach</div>
+                </div>
+            </div>
+
+            <!-- Right Visual -->
+            <div class="col-lg-5 hero-visual">
+                <div class="hero-card-stack">
+                    <div class="hero-card-behind behind-2"></div>
+                    <div class="hero-card-behind"></div>
+                    <div class="hero-card">
+                        <div class="card-stat-row">
+                            <div class="stat-box">
+                                <div class="stat-number">₹500Cr+</div>
+                                <div class="stat-label">Assets Guided</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-number">12,000+</div>
+                                <div class="stat-label">Happy Families</div>
+                            </div>
+                        </div>
+                        <div class="card-stat-row">
+                            <div class="stat-box">
+                                <div class="stat-number">98%</div>
+                                <div class="stat-label">Client Retention</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-number">4.9★</div>
+                                <div class="stat-label">Google Rating</div>
+                            </div>
+                        </div>
+                        <div class="card-testimonial">
+                            "KTS Wealth helped our family save for our daughter's education. Truly life-changing guidance!"
+                            <div class="testimonial-author">— Rajesh Kumar, Uttar Pradesh</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SERVICES SECTION ==================== -->
+<section class="services-section" id="services">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-pill">What We Offer</span>
+            <h2 class="section-title">Financial Services Tailored for You</h2>
+            <p class="section-desc mx-auto">We simplify finance for families who need it most — with honesty, clarity, and zero jargon.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <a href="#investment" class="service-card">
+                    <div class="service-icon icon-blue"><i class="bi bi-graph-up-arrow"></i></div>
+                    <h5>Mutual Funds</h5>
+                    <p>Systematic investment plans starting from just ₹500/month for long-term wealth creation.</p>
+                    <div class="card-arrow"><i class="bi bi-arrow-right"></i></div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <a href="#insurance" class="service-card">
+                    <div class="service-icon icon-gold"><i class="bi bi-shield-check"></i></div>
+                    <h5>Insurance Plans</h5>
+                    <p>Affordable term &amp; health insurance to protect your family from life's uncertainties.</p>
+                    <div class="card-arrow"><i class="bi bi-arrow-right"></i></div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <a href="#education" class="service-card">
+                    <div class="service-icon icon-green"><i class="bi bi-book"></i></div>
+                    <h5>Financial Education</h5>
+                    <p>Free workshops &amp; resources in regional languages for rural and semi-urban communities.</p>
+                    <div class="card-arrow"><i class="bi bi-arrow-right"></i></div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <a href="#retirement" class="service-card">
+                    <div class="service-icon icon-blue"><i class="bi bi-calendar-check"></i></div>
+                    <h5>Retirement Planning</h5>
+                    <p>Secure your golden years with personalized pension &amp; retirement strategies.</p>
+                    <div class="card-arrow"><i class="bi bi-arrow-right"></i></div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== ABOUT SECTION ==================== -->
+<section class="py-5" id="about" style="background: var(--cream);">
+    <div class="container py-4">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <span class="section-pill">About KTS Wealth</span>
+                <h2 class="section-title">Your Trusted Partner in Financial Growth</h2>
+                <p class="section-desc">
+                    At <strong>KTS Wealth</strong>, we believe that financial freedom is not a privilege — it's a right for every family. Founded with a mission to serve the <strong>lower middle class and rural communities</strong>, we provide accessible, honest, and actionable financial guidance that truly makes a difference.
+                </p>
+                <p class="section-desc mt-3">
+                    With over 15 years of experience and a deep understanding of the unique challenges faced by Indian families, we've built a reputation for trust, transparency, and results.
+                </p>
+                <a href="#consultation" class="btn-hero-primary mt-3" data-bs-toggle="modal" data-bs-target="#consultationModal" style="display: inline-flex;">
+                    Get to Know Us <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+            <div class="col-lg-6">
+                <div class="row g-3">
+                    <div class="col-6">
+                        <div class="service-card text-center" style="cursor:default;">
+                            <div class="service-icon icon-green mx-auto"><i class="bi bi-flag"></i></div>
+                            <h5>Mission</h5>
+                            <p style="font-size:0.85rem;">Financial literacy &amp; freedom for every Indian family, regardless of income.</p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="service-card text-center" style="cursor:default;">
+                            <div class="service-icon icon-gold mx-auto"><i class="bi bi-eye"></i></div>
+                            <h5>Vision</h5>
+                            <p style="font-size:0.85rem;">A financially empowered India where no family is left behind.</p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="service-card text-center" style="cursor:default;">
+                            <div class="service-icon icon-blue mx-auto"><i class="bi bi-heart"></i></div>
+                            <h5>Values</h5>
+                            <p style="font-size:0.85rem;">Trust, transparency, and a genuine commitment to community welfare.</p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="service-card text-center" style="cursor:default;">
+                            <div class="service-icon icon-green mx-auto"><i class="bi bi-award"></i></div>
+                            <h5>Recognition</h5>
+                            <p style="font-size:0.85rem;">Awarded "Best Financial Advisor" — Rural Focus, 2024.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== INVESTMENT SECTION ==================== -->
+<section class="py-5" id="investment">
+    <div class="container py-4">
+        <div class="text-center mb-5">
+            <span class="section-pill">Investment</span>
+            <h2 class="section-title">Smart Investments, Brighter Futures</h2>
+            <p class="section-desc mx-auto">From SIPs to government schemes — we help you choose what's right for your family's goals.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="service-card">
+                    <div class="service-icon icon-blue"><i class="bi bi-piggy-bank"></i></div>
+                    <h5>SIP &amp; Mutual Funds</h5>
+                    <p>Start small, dream big. SIPs from ₹500/month with expert fund selection.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card">
+                    <div class="service-icon icon-gold"><i class="bi bi-bank"></i></div>
+                    <h5>PPF &amp; NPS</h5>
+                    <p>Government-backed savings with tax benefits and guaranteed returns.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card">
+                    <div class="service-icon icon-green"><i class="bi bi-gem"></i></div>
+                    <h5>Gold &amp; Fixed Deposits</h5>
+                    <p>Traditional investment options made simple, secure, and accessible.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== EDUCATION SECTION ==================== -->
+<section class="py-5" id="education" style="background: var(--cream);">
+    <div class="container py-4">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5">
+                <span class="section-pill">Education</span>
+                <h2 class="section-title">Financial Literacy for Everyone</h2>
+                <p class="section-desc">
+                    We conduct <strong>free workshops</strong> in regional languages across rural India, covering budgeting, saving, investing, and avoiding financial scams. Knowledge is the first step toward freedom.
+                </p>
+                <div class="hero-trust-strip mt-3">
+                    <div class="hero-trust-item"><i class="bi bi-translate"></i> 8+ Regional Languages</div>
+                    <div class="hero-trust-item"><i class="bi bi-camera-video"></i> Online &amp; Offline</div>
+                    <div class="hero-trust-item"><i class="bi bi-currency-rupee"></i> 100% Free</div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="hero-card" style="max-width:100%;">
+                    <h5 class="fw-bold mb-3" style="color:var(--deep-navy);">📚 Upcoming Free Workshop</h5>
+                    <div class="d-flex flex-wrap gap-3 mb-3">
+                        <span style="background:var(--cream);padding:8px 14px;border-radius:20px;font-size:0.85rem;font-weight:600;">
+                            <i class="bi bi-calendar3 me-1"></i> 15th June 2026
+                        </span>
+                        <span style="background:var(--cream);padding:8px 14px;border-radius:20px;font-size:0.85rem;font-weight:600;">
+                            <i class="bi bi-clock me-1"></i> 4:00 PM IST
+                        </span>
+                        <span style="background:var(--cream);padding:8px 14px;border-radius:20px;font-size:0.85rem;font-weight:600;">
+                            <i class="bi bi-globe me-1"></i> Hindi &amp; English
+                        </span>
+                    </div>
+                    <p style="font-size:0.9rem;color:var(--text-muted);">Topic: <strong>"Building Wealth on a Modest Income"</strong> — A practical guide for families earning ₹15,000–₹40,000/month.</p>
+                    <a href="#consultation" class="btn-hero-primary" data-bs-toggle="modal" data-bs-target="#consultationModal" style="display:inline-flex;font-size:0.9rem;padding:10px 22px;">
+                        Register Free <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== CTA BANNER ==================== -->
+<section class="cta-banner" id="consultation">
+    <div class="container">
+        <div class="cta-content d-flex flex-wrap align-items-center justify-content-between gap-3">
+            <div>
+                <h2>Ready to Secure Your Family's Future?</h2>
+                <p class="mb-0 mt-2">Book a <strong>free, no-obligation consultation</strong> with our expert advisors today.</p>
+            </div>
+            <a href="#" class="btn-cta-gold" data-bs-toggle="modal" data-bs-target="#consultationModal">
+                <i class="bi bi-calendar-check"></i> Book Free Consultation
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer-section">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="footer-brand">KTS WEALTH</div>
+                <p class="footer-tagline">Building Financial Freedom for Every Family</p>
+                <p style="font-size:0.85rem;color:var(--text-muted);">
+                    <i class="bi bi-geo-alt-fill me-1"></i> Serving families across India — rural, semi-urban &amp; beyond.
+                </p>
+                <a href="tel:0000041027" style="color:var(--gold);font-weight:700;text-decoration:none;font-size:1rem;">
+                    <i class="bi bi-telephone-fill me-1"></i> 0000041027
+                </a>
+            </div>
+            <div class="col-md-2 col-6">
+                <h6 class="footer-heading">Quick Links</h6>
+                <a href="#" class="footer-link">Home</a>
+                <a href="#about" class="footer-link">About Us</a>
+                <a href="#services" class="footer-link">Services</a>
+                <a href="#investment" class="footer-link">Investment</a>
+                <a href="#education" class="footer-link">Education</a>
+            </div>
+            <div class="col-md-3 col-6">
+                <h6 class="footer-heading">Services</h6>
+                <a href="#investment" class="footer-link">Mutual Funds</a>
+                <a href="#investment" class="footer-link">Insurance Plans</a>
+                <a href="#education" class="footer-link">Workshops</a>
+                <a href="#investment" class="footer-link">Retirement</a>
+                <a href="#consultation" class="footer-link" data-bs-toggle="modal" data-bs-target="#consultationModal">Consultation</a>
+            </div>
+            <div class="col-md-3">
+                <h6 class="footer-heading">Connect With Us</h6>
+                <p style="font-size:0.85rem;color:var(--text-muted);">Follow us for financial tips &amp; updates:</p>
+                <div class="d-flex gap-3 mt-2">
+                    <a href="#" style="color:var(--royal-blue);font-size:1.3rem;" title="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" style="color:var(--royal-blue);font-size:1.3rem;" title="YouTube"><i class="bi bi-youtube"></i></a>
+                    <a href="#" style="color:var(--royal-blue);font-size:1.3rem;" title="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" style="color:var(--royal-blue);font-size:1.3rem;" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 <strong>KTS Wealth</strong>. All rights reserved. | Building Financial Freedom for Every Family.
+        </div>
+    </div>
+</footer>
+
+<!-- ==================== CONSULTATION MODAL ==================== -->
+<div class="modal fade" id="consultationModal" tabindex="-1" aria-labelledby="consultationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="consultationModalLabel">
+                    <i class="bi bi-calendar-check me-2" style="color:var(--gold);"></i>Book Your Free Consultation
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="consultationForm">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="fullName" class="form-label">Full Name *</label>
+                            <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="phoneNumber" class="form-label">Phone Number *</label>
+                            <input type="tel" class="form-control" id="phoneNumber" placeholder="Enter phone number" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="emailAddress" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="emailAddress" placeholder="Enter email (optional)">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="serviceInterest" class="form-label">I'm Interested In</label>
+                            <select class="form-control" id="serviceInterest">
+                                <option value="">Select an option</option>
+                                <option>Mutual Funds / SIP</option>
+                                <option>Insurance Planning</option>
+                                <option>Financial Education</option>
+                                <option>Retirement Planning</option>
+                                <option>General Consultation</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label for="messageArea" class="form-label">Message (Optional)</label>
+                            <textarea class="form-control" id="messageArea" rows="3" placeholder="Tell us about your financial goals..."></textarea>
+                        </div>
+                        <div class="col-12 mt-2">
+                            <button type="submit" class="btn-submit">
+                                <i class="bi bi-send-fill me-2"></i> Submit &amp; Schedule Call
+                            </button>
+                            <p class="text-muted mt-2 mb-0" style="font-size:0.78rem;text-align:center;">
+                                <i class="bi bi-lock-fill me-1"></i> Your information is safe &amp; will never be shared.
+                            </p>
+                        </div>
+                    </div>
+                </form>
+                <div id="formSuccessMessage" class="text-center py-4" style="display:none;">
+                    <i class="bi bi-check-circle-fill" style="font-size:3rem;color:var(--success-green);"></i>
+                    <h5 class="mt-3 fw-bold" style="color:var(--deep-navy);">Thank You!</h5>
+                    <p class="text-muted">We've received your request. Our advisor will call you within <strong>24 hours</strong>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap 5 JS CDN -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+</script>
+
+<script>
+    // ========== Navbar scroll effect ==========
+    const navbar = document.getElementById('mainNavbar');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // ========== Smooth scroll for anchor links ==========
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            // Skip modal triggers and non-hash links
+            if (!href || href === '#' || href.includes('modal') || !href.startsWith(
+                    '#')) return;
+            const targetEl = document.querySelector(href);
+            if (targetEl) {
+                e.preventDefault();
+                const navbarHeight = navbar.offsetHeight;
+                const targetPosition = targetEl.getBoundingClientRect().top + window.pageYOffset -
+                    navbarHeight - 10;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+                // Close mobile navbar if open
+                const navbarCollapse = document.getElementById('navbarContent');
+                if (navbarCollapse.classList.contains('show')) {
+                    bootstrap.Collapse.getInstance(navbarCollapse)?.hide();
+                }
+            }
+        });
+    });
+
+    // ========== Consultation form submission ==========
+    const consultationForm = document.getElementById('consultationForm');
+    const formSuccessMessage = document.getElementById('formSuccessMessage');
+
+    consultationForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Basic validation
+        const fullName = document.getElementById('fullName').value.trim();
+        const phoneNumber = document.getElementById('phoneNumber').value.trim();
+
+        if (!fullName || !phoneNumber) {
+            alert('Please fill in your name and phone number.');
+            return;
+        }
+
+        if (!/^\d{10,}$/.test(phoneNumber.replace(/[\s\-+]/g, ''))) {
+            alert('Please enter a valid phone number (at least 10 digits).');
+            return;
+        }
+
+        // Simulate submission
+        consultationForm.style.display = 'none';
+        formSuccessMessage.style.display = 'block';
+
+        // Reset after modal closes
+        const modalEl = document.getElementById('consultationModal');
+        modalEl.addEventListener('hidden.bs.modal', function resetForm() {
+            consultationForm.style.display = 'block';
+            formSuccessMessage.style.display = 'none';
+            consultationForm.reset();
+            modalEl.removeEventListener('hidden.bs.modal', resetForm);
+        });
+
+        // Auto close after 4 seconds
+        setTimeout(() => {
+            const modalInstance = bootstrap.Modal.getInstance(modalEl);
+            if (modalInstance) modalInstance.hide();
+        }, 4000);
+    });
+
+    // ========== Active nav link update on scroll ==========
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.navbar .nav-link');
+
+    function updateActiveLink() {
+        let currentSectionId = '';
+        const scrollPos = window.scrollY + navbar.offsetHeight + 60;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                currentSectionId = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            const linkHref = link.getAttribute('href');
+            if (linkHref && linkHref.includes('#' + currentSectionId)) {
+                link.classList.add('active');
+            }
+        });
+
+        // Default to Home if at top
+        if (window.scrollY < 200) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            const homeLink = document.querySelector('.navbar .nav-link[href="#"]');
+            if (homeLink) homeLink.classList.add('active');
+        }
+    }
+
+    window.addEventListener('scroll', updateActiveLink);
+    updateActiveLink(); // Run on load
+
+    console.log('🏠 KTS Wealth — Building Financial Freedom for Every Family');
+    console.log('📞 Contact: 0000041027 | Book a Free Consultation today!');
+</script>
+</body>
+</html>
