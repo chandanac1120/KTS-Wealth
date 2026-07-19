@@ -483,8 +483,8 @@
             }
         }
         .financial {
-    width: 110%;
-    max-width: 110%;
+    width: 100%;
+    max-width: 100%;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -669,7 +669,6 @@
         }
 
        /* ========== FOOTER ========== */
-        /* ========== FOOTER ========== */
 .footer-section {
     background: var(--cream);
     padding: 50px 0 30px;
@@ -761,7 +760,30 @@
 .contact-column {
     padding-left: 10px; /* Try 10px, 8px, or 5px */
 }
+/* Mobile Footer */
+@media (max-width: 768px) {
 
+    .contact-column {
+        text-align: center;
+    }
+
+    .social-icons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-item {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .contact-item span {
+        text-align: left;
+    }
+}
 
 /*====================
 FLOATING BUTTONS
