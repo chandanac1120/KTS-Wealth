@@ -669,79 +669,99 @@
         }
 
        /* ========== FOOTER ========== */
-        .footer-section {
-            background: var(--cream);
-            padding: 50px 0 30px;
-            border-top: 1px solid var(--soft-border);
-        }
-        .footer-brand {
-            font-family: 'Playfair Display', serif;
-            font-weight: 800;
-            font-size: 1.6rem;
-            color: var(--deep-navy);
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-        }
-        .footer-tagline {
-            font-size: 0.88rem;
-            color: var(--text-muted);
-            margin-bottom: 16px;
-        }
-        .footer-link {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: var(--transition);
-            display: block;
-            padding: 3px 0;
-            font-weight: 400;
-        }
-        .footer-link:hover {
-            color: var(--gold);
-            padding-left: 4px;
-        }
-        .footer-heading {
-            font-weight: 700;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--deep-navy);
-            margin-bottom: 14px;
-        }
-        .footer-bottom {
-            border-top: 1px solid var(--soft-border);
-            padding-top: 20px;
-            margin-top: 10px;
-            text-align: center;
-            font-size: 0.82rem;
-            color: var(--text-muted);
-        }
-.social-icons{
-    display: flex;
-    flex-direction: column;
-    gap:15px;
+        /* ========== FOOTER ========== */
+.footer-section {
+    background: var(--cream);
+    padding: 50px 0 30px;
+    border-top: 1px solid var(--soft-border);
 }
 
-/* Contact Details */
-
-.social-icons div i {
-    font-size: 1.2rem;
-    color: var(--royal-blue);
-    min-width: 22px;
-    margin-top: 3px;
+.footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: var(--deep-navy);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
 }
 
-.social-icons div span {
-    flex: 1;
-    word-break: break-word;
+.footer-tagline {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+}
+
+.footer-heading {
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--deep-navy);
+    margin-bottom: 14px;
+}
+
+.footer-link {
+    display: block;
+    padding: 4px 0;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.footer-link:hover {
+    color: var(--gold);
+    padding-left: 4px;
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--soft-border);
+    padding-top: 20px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.82rem;
     color: var(--text-muted);
 }
 
-/* Hover Effect */
-.social-icons div:hover span {
-    color: var(--gold);
-    transition: 0.3s ease;
+/* ========== CONTACT / SOCIAL INFO ========== */
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.contact-item i {
+    color: var(--royal-blue);
+    font-size: 1.1rem;
+    min-width: 22px;
+    margin-top: 3px;
+    transition: 0.3s;
+}
+
+.contact-item span {
+    color: var(--text-muted);
+    line-height: 1.5;
+    transition: 0.3s;
+}
+
+.contact-item:hover i,
+.contact-item:hover span {
+    color: var(--gold);
+}
+.contact-column {
+    padding-right: 10px; /* Try 10px, 8px, or 5px */
+}
+.contact-column {
+    padding-left: 10px; /* Try 10px, 8px, or 5px */
+}
+
 
 /*====================
 FLOATING BUTTONS
