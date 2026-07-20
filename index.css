@@ -760,6 +760,9 @@
 .contact-column {
     padding-left: 10px; /* Try 10px, 8px, or 5px */
 }
+.contact-item a{
+    text-decoration:none;
+}
 /* Mobile Footer */
 @media (max-width: 768px) {
 
